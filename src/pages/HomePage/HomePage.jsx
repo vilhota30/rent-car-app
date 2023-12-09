@@ -3,7 +3,6 @@ import MainPage from "components/Home/Home";
 const HomePage = () => {
     return (
         <>
-         {/* <Text>Here is Home Page</Text> */}
          <MainPage />
         </>
     )

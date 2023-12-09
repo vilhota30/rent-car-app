@@ -1,23 +1,23 @@
 import Modal from "components/Modal/Modal";
 import { CarModalContainer, ImageContainer, Image, Header, AccessoriesList, RentalHeader, RentalList, RentalLi, DataContainer} from "./ModalCarNotices.styled";
-import { useState } from "react";
+// import { useState } from "react";
 
 const ModalCarNotices = () => {
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    // const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const toggleContactModal = () => {
-        setIsModalOpen(prevState => !prevState);
-    };
+    // const toggleContactModal = () => {
+    //     setIsModalOpen(prevState => !prevState);
+    // };
     
-    const contactClickHandler = () => {
-        toggleContactModal();
-    };
+    // const contactClickHandler = () => {
+    //     toggleContactModal();
+    // };
     
     return (
         <>
-         <Modal toggleModal={toggleModal}>
-             <ModalCarNotices>
+         <Modal>
+             <CarModalContainer>
                    <DataContainer>
                        <ImageContainer>
                           <Image />
@@ -29,8 +29,10 @@ const ModalCarNotices = () => {
                                 <RentalLi />
                              </RentalList>
                    </DataContainer>
-             </ModalCarNotices>
+             </CarModalContainer>
          </Modal>
         </>
     )
 }
+
+export default ModalCarNotices;
