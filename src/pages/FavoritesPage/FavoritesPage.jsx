@@ -1,9 +1,9 @@
 import { Title } from "./FavoritesPage.styled";
-
 const FavoritePage = () => {
     return (
         <>
-         <Title>Here is Favorites Page</Title>
+          <Title>Here is Favorites Page</Title>
+       
         </>
     )
 }
