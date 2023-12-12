@@ -1,5 +1,5 @@
 import { HomeContainer, HomeWrapper, Header } from "./Home.styled";
-import car from '../../images/carphoto.jpg'
+import car from '../../images/carphoto.jpg';
 const MainPage = () => {
 
     return (
