@@ -3,63 +3,36 @@ import { fetchAdverts, getCarModel } from './operations';
 
 const initialState = {
   favorites: [],
-  modelCar: [],
-  adverts: [ 
-    {
-    "id": 9582,
-    "year": 2008,
-    "make": "Buick",
-    "model": "Enclave",
-    "type": "SUV",
-    "img": "https://res.cloudinary.com/ditdqzoio/image/upload/v1687252635/cars/buick_enclave.jpg",
-    "description": "The Buick Enclave is a stylish and spacious SUV known for its comfortable ride and luxurious features.",
-    "fuelConsumption": "10.5",
-    "engineSize": "3.6L V6",
-    "accessories": [
-      "Leather seats",
-      "Panoramic sunroof",
-      "Premium audio system"
-    ],
-    "functionalities": [
-      "Power liftgate",
-      "Remote start",
-      "Blind-spot monitoring"
-    ],
-    "rentalPrice": "$40",
-    "rentalCompany": "Luxury Car Rentals",
-    "address": "123 Example Street, Kiev, Ukraine",
-    "rentalConditions": "Minimum age: 25\nValid driver's license\nSecurity deposit required",
-    "mileage": 5858
-  },
-  {
-    "id": 9584,
-    "year": 2019,
-    "make": "Volvo",
-    "model": "XC90",
-    "type": "SUV",
-    "img": "https://res.cloudinary.com/ditdqzoio/image/upload/v1687252635/cars/volvo_xc90.jpg",
-    "description": "The Volvo XC90 is a premium SUV that offers exceptional safety, advanced technology, and elegant design.",
-    "fuelConsumption": "8.3",
-    "engineSize": "2.0L 4-cylinder",
-    "accessories": [
-      "Nappa leather seats",
-      "Bowers & Wilkins premium sound system",
-      "Head-up display"
-    ],
-    "functionalities": [
-      "IntelliSafe advanced safety features",
-      "Pilot Assist semi-autonomous driving",
-      "Four-zone automatic climate control"
-    ],
-    "rentalPrice": "$50",
-    "rentalCompany": "Premium Auto Rentals",
-    "address": "456 Example Avenue, Lviv, Ukraine",
-    "rentalConditions": "Minimum age: 21\nValid driver's license\nProof of insurance required",
-    "mileage": 5352
-  },
+   modelCar: [ 
+    // "Buick",
+  // "Volvo",
+  // "HUMMER",
+  // "Subaru",
+  // "Mitsubishi",
+  // "Nissan",
+  // "Lincoln",
+  // "GMC",
+  // "Hyundai",
+  // "MINI",
+  // "Bentley",
+  // "Aston Martin",
+  // "Pontiac",
+  // "Lamborghini",
+  // "Audi",
+  // "BMW",
+  // "Chevrolet",
+  // "Mercedes-Benz",
+  // "Chrysler",
+  // "Kia",
+  // "Land Rover",
+  // "Ford",
+  // "Telsa",
+  // "Toyota"
 ],
+  adverts: [],
   isLoading: false,
   modal: null,
+  pagesEnd: false,
 };
 
 const advertSlice = createSlice({
@@ -82,6 +55,10 @@ const advertSlice = createSlice({
       }
       state.favorites = [...state.favorites, payload];
     },
+    emptyAdvertList(state) {
+      state.adverts = [];
+      state.pagesEnd = false;
+    },
   },
   
   extraReducers: builder => {
@@ -90,11 +67,21 @@ const advertSlice = createSlice({
         state.modelCar = payload;
       })
       .addCase(fetchAdverts.fulfilled, (state, { payload }) => {
-        state.adverts = payload;
+        state.adverts = [...state.adverts, ...payload];
+        if (payload.length < 3) {
+          state.pagesEnd = true;
+        }
+        state.isLoading = false;
+      })
+      .addCase(fetchAdverts.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(fetchAdverts.rejected, state => {
+        state.isLoading = false;
       });
   },
 });
 
-export const { openModal, closeModal } = advertSlice.actions;
+export const { openModal, closeModal, toggleFavorite, emptyAdvertList } = advertSlice.actions;
 
 export const advertsReducer = advertSlice.reducer;

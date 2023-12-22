@@ -21,14 +21,15 @@ export const CarModalContainer = styled.div`
 `;
 
 export const DataContainer = styled.div`
-    padding: 40px;
+    padding: 30px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 541px;
-    height: 642px;
+    height: 632px;
     border-radius: 24px;
+    border: 3px solid black;
     background-color: white;
     z-index: 101;
 `;
@@ -37,8 +38,8 @@ export const ImageContainer = styled.div`
     
     margin-right: auto;
     margin-left: auto; 
-    width: 460px;
-    height: 248px;
+    width: 450px;
+    height: 220px;
     border-radius: 14px;
     background-image: url('../../../images/placeholder');
     background-position: center;
@@ -52,12 +53,13 @@ export const Image = styled.img`
     // height: 100%;
     margin-right: auto;
     margin-left: auto; 
-    width: 460px;
-    height: 248px;
+    width: 450px;
+    height: 220px;
     border-radius: 14px;
     object-fit: cover;
-    background-image: url('../../../images/placeholder');
-    background-color: darkblue;
+    background-image: url('../../../images/placeholder.jpg');
+    background-color: antiquewhite;
+    
 `;
 
 export const Header = styled.h2`
@@ -93,8 +95,6 @@ export const RentalList = styled.ul`
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    gap: 8px;
-    margin-bottom: 24px;
 `;
 
 export const RentalLi = styled.li`
@@ -111,34 +111,34 @@ export const BtnRentCar = styled.button`
     margin-right: auto;
     margin-left: auto;
 
-    width: 180px;
-    height: 45px;
+    width: 160px;
+    height: 30px;
     color: white;
     background-color: blue;
     border-radius: 8px;
     max-width: 168px;
     text-align: center;
-    font-size: 18px;
-    font-weight: 800;
+    font-size: 16px;
+    font-weight: 400;
     &&:hover {
         background-color: darkblue;
-        color: blue; 
+        color: white; 
     }
 `; 
 
 export const CloseButton = styled.button`
-    display: flex;
-    margin-left: auto;
+    display: inline-block;
+    margin-left: 500px;
     border: none;
     color: white;
     outline: none;
-    background-color: blue;
+    background-color: darkblue;
     border-radius: 8px;
-    width: 24px;
     height: 24px;
     &&:hover {
         color: white;
-        background-color: darkblue;
+        background-color: blue;
+        border: 3px solid dakrlue;
     }
 `;
 

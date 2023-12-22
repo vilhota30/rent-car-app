@@ -1,8 +1,8 @@
 import { LoadMore } from "./BtnLoadMore.styled";
 
- const BtnLoadMore = () => {
+ const BtnLoadMore = ({callbackFunction}) => {
     <>
-       <LoadMore />
+       <LoadMore onClick={callbackFunction}>Load More</LoadMore>
     </>
 }
 

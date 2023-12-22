@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const HomeWrapper = styled.div`
 display: flex;
 align-items: center;
+margin-left: auto;
+margin-right: auto;
+width: 980px;
+border-radius: 10px;
 justify-content: center;
 padding: 30px;
 background-color: darkslateblue;
