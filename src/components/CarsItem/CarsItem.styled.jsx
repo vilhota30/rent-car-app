@@ -17,7 +17,8 @@ export const CarItemCart = styled.li`
    width: 274px;
    height: 426px;
    padding: 5px;
-   border: 2px solid blue;
+   border: 3px solid darkblue;
+   background-color: #3F51B5;
    border-radius: 8px;
 `;
 
@@ -55,4 +56,10 @@ export const CarImage = styled.img`
  background-color: blue;
  border-radius: 20px;
  margin-top: auto;
+ font-size: 16px;
+ font-weight: 400;
+  &&:hover {
+     color: white;
+     background-color: darkblue;
+  }
  `;

@@ -1,4 +1,4 @@
-import { Header, Container, Button } from "./NotFound.styled";
+import { Header, Container, Button, Link } from "./NotFound.styled";
 
 const NotFound = () => {
 
@@ -6,7 +6,9 @@ const NotFound = () => {
         <>
           <Container>
               <Header>Please go to the main page</Header>
-              <Button to="/">Click here</Button>
+              <Button>
+                <Link to="/">Click here</Link>
+                </Button>
           </Container>
         </>
     )
