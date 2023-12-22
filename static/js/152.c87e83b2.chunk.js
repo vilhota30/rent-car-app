@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkrent_car_app=self.webpackChunkrent_car_app||[]).push([[152],{3152:function(n,e,t){t.r(e),t.d(e,{default:function(){return s}});var r,c=t(168),a=t(5867).ZP.h3(r||(r=(0,c.Z)(["\ndisplay: flex;\njustify-content: center;\ncolor: blue;\nfont-weight: 500;\nfjnt-size: 18px;\n"]))),i=t(3329),s=function(){return(0,i.jsx)(i.Fragment,{children:(0,i.jsx)(a,{children:"Here is Favorites Page"})})}}}]);
-//# sourceMappingURL=152.c87e83b2.chunk.js.map
